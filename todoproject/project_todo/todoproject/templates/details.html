@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="card-body">
+                    <h5 class="card-title">Task: {{detail.name}}</h5>
+                    <p><b>Priority:{{detail.priority}} </b></p>
+                    <p><b>Date: {{detail.date}} </b></p>
+                    <a class="btn btn-danger" href="{% url 'delete' detail.id %}">
+                        Done
+                    </a>
+                     <a class="btn btn-success" href="{% url 'edit' detail.id %}">
+                        Edit
+                    </a>
+                </div>
+
+
+{% endblock %}
