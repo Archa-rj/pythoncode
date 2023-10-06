@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enroll</title>
+    <style>
+    .demo{form-align:center;}
+
+
+    </style>
+</head>
+<body style="background-image:url({% static 'images/about.jpg' %})" >
+<h2 style="color:#154360  ">Registration</h2>
+<div class="demo">
+<form action="register" method="post" style="form-align:center">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter your username name"><br>
+     <input type="text" name="firstname" placeholder="Enter your first name"><br>
+    <input type="text" name="secondname" placeholder="Enter your second name"><br>
+    <input type="email" name="email" placeholder="Enter your mail id"><br>
+    <input type="password" name="password" placeholder="Enter your password"><br>
+    <input type="password" name="pd" placeholder="Confirm your password"><br>
+<input type="submit">
+
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+
+
+
+
+</div>
+
+</body>
+</html>
