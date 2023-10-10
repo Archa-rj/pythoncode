@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{cartoon.img.url}}" width="350" height="250"><br>
+        </div>
+<div class="col-md-6">
+   <h2>{{cartoon.name}}</h2>
+    <b> <u>Main Characters </b> </u> : {{cartoon.char}}<br>
+    <h5><u>About:</u></h5>
+  <h6> {{cartoon.desc}}</h6><br><br>
+    <a href="{% url 'cartoon:detail' cartoon.id %}" class="btn btn-success">EDIT</a>
+&nbsp;
+
+<a href="{% url 'cartoon:delete' cartoon.id %}" class="btn btn-danger">DELETE</a>
+</div>
+
+
+    </div>
+</div>
+
+
+        {% endblock %}
+</body>
+</html>
