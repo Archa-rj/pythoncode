@@ -1,6 +1,5 @@
-from django.contrib import admin
-
-# Register your models here.
-# admin.site.register(Person)
-# admin.site.register(District)
-# admin.site.register(City)
+# from .views import login,register
+# from django.contrib import admin
+#
+# admin.display(login)
+# admin.display(register)

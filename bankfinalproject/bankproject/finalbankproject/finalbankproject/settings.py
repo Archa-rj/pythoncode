@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'bank_app',
+     'accounts',
     'credentials',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 MIDDLEWARE = [
@@ -81,6 +83,8 @@ DATABASES = {
         'NAME': 'bank_project',
         'USER':'root',
         'PASSWORD':'',
+        'HOST':'localhost',
+        'PORT':'3306'
     }
 }
 
@@ -128,3 +132,4 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL="accounts/login/dir_form"

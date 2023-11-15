@@ -1,3 +1,5 @@
+
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -37,6 +39,11 @@
 </head>
 <body>
 
+           {% if messages %}
+             {% for message in messages %}
+                     {{ message }}
+             {% endfor %}
+           {% endif %}
 
     <!-- Navbar Start -->
     <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
@@ -61,14 +68,21 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="" class="nav-item nav-link active">Home</a>
-                        {% if user.is_authenticated %}
-                        <li>Hello{{user.username}}</li>
-                        <li><a href="credentials/logout">Logout</a></li>
-                          {% else %}
+                          <form action="login" method="post">
+                              {% csrf_token %}
+                              {{ form.as_p }}
+                              <a href="credentials/login"  class="nav-item nav-link">Login</a>
+
+                          </form>
+
+
+
                     <a href="credentials/register" class="nav-item nav-link">Register</a>
 
-                    <a href="credentials/login" class="nav-item nav-link">Login</a>
-                          {% endif %}
+<!--                    <a href="credentials/login"  class="nav-item nav-link">Login</a>-->
+
+
+
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Branches</a>
                         <div class="dropdown-menu border-dark m-0">
@@ -79,7 +93,7 @@
                             <a href="https://en.wikipedia.org/wiki/Thrissur" class="dropdown-item">Thrissur</a>
                         </div>
                     </div>
-                    <a href="" class="nav-item nav-link">Contact</a>
+                    <a href="{% url 'bank_app:index' %}" class="nav-item nav-link">Contact</a>
                 </div>
 
             </div>
@@ -371,7 +385,10 @@
                             </div>
                             <div class="col-12 text-center">
                                 <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button><br>
-                                <a href="{% url 'credentials:login' %}"><button  class="btn btn-danger w-100 py-3"  type="submit">Login Now</button></a>
+
+
+                               <a href="{% url 'credentials:login' %}"><button  class="btn btn-danger w-100 py-3"  type="submit">Login Now</button></a>
+
                             </div>
                         </div>
                     </div>
