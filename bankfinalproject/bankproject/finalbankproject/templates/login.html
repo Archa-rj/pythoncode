@@ -26,12 +26,13 @@
             <div class="row vh-100 ">
                 <div class="col-lg-6 bg-gray p-5 text-center">
                    <h4 class="text-center fw-bolder fs-2">Register</h4>
-                    <p  class="mb-3 fs-7">Don't you have an account </p>
-                   <p class="mb-3 fs-7">Register Now </p>
+			 <p  class="mb-3 fs-7">Don't you have an account </p>
+                          <p  class="mb-3 fs-7">Don't you have an account </p>
+                           <p class="mb-3 fs-7">Register Now </p>
 
                     <a href="{% url 'credentials:register' %}">
                        <button class="btn fw-bold mb-5 btn-outline-success px-4 rounded-pill">Sign Up</button>
-                   </a>
+                    </a>
                    <div class="img-cover p-4">
                         <img src="{% static 'images/loginbg.svg' %}" alt="">
                    </div>
@@ -42,26 +43,20 @@
 
                                   <form action="" method="POST" novalidate>
                                                          {% csrf_token %}
-                                      <header>
-  		                                       {%if request.user.is_authenticated %}
-  			                                   <span>Hi {{ request.user.username | title }}</span>
-
-                                               {%else%}
-
-                                               {%endif%}
-
-                                          <form action="dir_form" method="POST" novalidate>
-                                                    {% csrf_token %}
+				<a href="{% url 'credentials:dir_form' %}"> <input type="submit"  value="Login" />  </a>
+					  
+                        <header>
+  		                        {%if request.user.is_authenticated %}
+  			         <span>Hi {{ request.user.username | title }} Login Once More! </span>
+				
 	                                                 <h2>Login</h2>
-                                                     {{form.as_p}}
+                                                          {{form.as_p}}
                                               {%if request.user.is_authenticated %}
-                                              <a href="{% url 'credentials:dir_form' %}"> <input type="submit"  value="Login" />  </a>
-
-
-                                                      </form>
-                                      </header>
-                                              {% endif %}
+                                      
+                                              
                                       <a href="{% url 'credentials:logout' %}">Logout</a>
+					  {% endif %}
+				</header>
 
                             </form>
 
