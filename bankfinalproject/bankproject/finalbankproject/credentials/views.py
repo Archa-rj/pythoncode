@@ -1,24 +1,5 @@
-# from django.contrib import auth, messages
-# from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-from django.shortcuts import render,redirect,get_object_or_404
-
-from django.contrib.auth import authenticate,login,logout
-from django.contrib import messages
+from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
-
-# from .forms import PersonCreationForm
-# from .models import Person, Office
-
-
-
-
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from django.contrib.auth import login, authenticate
-from .forms import LoginForm
-
 @login_required()
 def sign_in(request):
     if request.method == 'GET':
@@ -34,12 +15,11 @@ def sign_in(request):
             user = authenticate(request, username=username, password=password)
             if user:
                 login(request, user)
-            return render(request,'direct_form.html')
-        messages.error(request, f'')
-        return render(request, 'login.html', {'form': form})
+                return render(request,'direct_form.html')
+        
+    return render(request, 'login.html', {'form': form})
 
 from django.shortcuts import render, redirect
-from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from .forms import LoginForm, RegisterForm
 
@@ -74,7 +54,6 @@ def logout_user(request):
     return redirect('/')
 def submit(request):
     return render(request,'submit.html')
-#
 from .forms import PersonCreationForm
 from .models import Person, Office
 
