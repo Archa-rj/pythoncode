@@ -70,11 +70,11 @@
                     <a href="" class="nav-item nav-link active">Home</a>
                           <form action="login" method="post">
                               {% csrf_token %}
-                              {{ form.as_p }}
+                              
                               <a href="credentials/login"  class="nav-item nav-link">Login</a>
 
                           </form>
-                    <a href="{% url 'bank_app:index' %}" class="nav-item nav-link"> Logout</a>
+                    <a href="{% url 'credentials:logout' %}" class="nav-item nav-link"> Logout</a>
 
 
 
