@@ -1,0 +1,29 @@
+{% extends 'layout/nav.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block 'content' %}
+    <h3>Your Products</h3>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        {% for products in product_list %}
+        <tr>
+            <td>{{products.id}}</td>
+            <td>{{products.name}}</td>
+            <td>{{products.price}}</td>
+            <td><a href="{% url 'update' products.id %}" class="btn btn-success" value="edit" type="submit">Edit</a></td>
+            <td><a href="{% url 'delete' products.id %}" class="btn btn-danger" value="edit" type="submit">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+</html>

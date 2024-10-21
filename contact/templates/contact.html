@@ -1,0 +1,86 @@
+{% extends 'layout/nav.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block 'content' %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact-Us</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        td{
+            padding:5px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 class="ml-4" style="font-family: 'Times New Roman', Times, serif;font-weight: 400;">Contact Us-RJ Tech</h1>
+    <div class="col-lg-12 col-md-12 col-sm-6 col-sm-6 col-xs-12">
+        <p>We'd love to hear from you! If you have any questions, concerns, or need more information regarding the RJ Tech Hackathon, feel free 
+            to reach out. <br>Please feel free to contact us regarding any queries.
+        </p>
+    </div>
+
+    <div class="container ">
+        <div class="row jumbotron">
+            <div class="col-lg-6 ">
+                <h4>Address:</h4>
+                <p style="text-align:justify">RJ Tech Pvt. Ltd. <br>
+                    Block B, 4th Floor, Tech Innovations Hub, <br>
+                    Startup Village, Kalamassery, <br>
+                    Kochi, Kerala 682033, <br>
+                    India</p>
+            </div>
+            <div class="col-lg-6">
+                <h3>Here is the route map!</h3>
+                <a href="https://www.google.com/maps/place/Kochi,+Kerala/@9.982516,76.136121,11z/data=!3m1!4b1!4m6!3m5!1s0x3b080d514abec6bf:0xbd582caa5844192!8m2!3d9.9312328!4d76.2673041!16zL20vMGZsMnM?entry=ttu&g_ep=EgoyMDI0MDkxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-secondary">Tap here</a>
+                <br><br>
+                <table style="border: 1px solid black;padding-left:10px;">
+                    <tr>
+                        <td><i class="fa-regular fa-envelope"></i></td>
+                        <td>rjtech@mail.com</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa-solid fa-phone"></i></td>
+                        <td>+91 852963741</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <p>We value your feedback. Please share your opinions with us.  <i class="fa-solid fa-pen-nib"></i></p>
+                <a href="{% url 'contactus' %}" class="btn btn-warning">FEEDBACK <i class="fa-regular fa-comment-dots"></i></a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- <div class="jumbotron  mx-auto">
+    <div class="col-lg-6 ">
+        <h4>Address:</h4>
+        <p style="text-align:justify">RJ Tech Pvt. Ltd. <br>
+            Block B, 4th Floor, Tech Innovations Hub, <br>
+            Startup Village, Kalamassery, <br>
+            Kochi, Kerala 682033, <br>
+            India</p>
+    <div class="col-lg-6">
+        <h3>Here is it!</h3>
+        <a href="https://www.google.com/maps/place/Kochi,+Kerala/@9.982516,76.136121,11z/data=!3m1!4b1!4m6!3m5!1s0x3b080d514abec6bf:0xbd582caa5844192!8m2!3d9.9312328!4d76.2673041!16zL20vMGZsMnM?entry=ttu&g_ep=EgoyMDI0MDkxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank"><button>Tap here</button></a>
+    </div>
+    </div>
+    </div> -->
+    {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

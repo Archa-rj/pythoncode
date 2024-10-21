@@ -1,0 +1,77 @@
+{% extends 'layout/nav.html' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block 'content' %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>data</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+       <style>
+        body{
+            background-color: whitesmoke;
+        }
+        table{
+            border-collapse: collapse;
+            width: 60%;
+            margin-left: 25%;
+        }
+        table,th,td{
+            border: 1px solid black;
+
+        }
+        th,td,h4{
+            padding: 5px;
+            text-align: center;
+        }
+        h4{
+            text-decoration: underline;
+        }
+        .home{
+            margin-left: 80%;
+            margin-top:10px;
+        }
+        .msg{
+            width: 15%;
+            padding:25px;
+            margin-top: 15px;
+            margin-left: 45%;
+            font-weight: bolder;
+            text-align: center;
+        }
+       </style>
+    </head>
+    <body>
+        <h4>Just Registered</h4>
+        
+        <table border="1">
+            <tr>
+                <td>id:</td>
+                <td>{{db.id}}</td>
+            </tr>
+            <tr>
+                <td>name:</td>
+                <td>{{db.name}}</td>
+            </tr>
+            <tr>
+                <td>Mark</td>
+                <td>{{db.mark}}</td>
+            </tr>
+        </table>
+        <div class="text-danger bg-dark msg">
+        <p>{{message}}</p>
+    </div>
+
+      
+        
+         
+    </div>
+{% endblock %}
+
+        
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </body>
+</html>
